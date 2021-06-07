@@ -1,0 +1,6 @@
+<h1>新規投稿</h1>
+<%= form_with model: @post, local: true do |form| %>
+  <p><%= form.label :title, "タイトル" %> <%= form.text_field :title %> </p>
+  <p><%= form.label :comment, "コメント" %> <%= form.text_area :comment %> </p>
+  <%= form.submit "送信" %>
+<% end %>
