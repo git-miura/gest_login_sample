@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
   <% @posts.each do |post|%>
     <p><%= post.title %> : <%= post.comment %> <%= "投稿者: #{post.user.name}" if post.user.name.present? %> </p>
-    <p><%= image_tag post.image.url if post.image?%> </p>
+    <p><%= image_tag post.image.thumb.url if post.image?%> </p>
   <% end %>
 <% else %>
   <p>ログインしてください</p>
