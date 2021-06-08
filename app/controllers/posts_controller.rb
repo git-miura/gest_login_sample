@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @posts = Post.all
+    @posts = Post.order(id: :asc)
   end
 
   def new
@@ -12,6 +12,10 @@ class PostsController < ApplicationController
 
   def create
     current_user.posts.create!(post_params)
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
 
