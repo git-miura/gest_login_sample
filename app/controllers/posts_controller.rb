@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     current_user.posts.create!(post_params)
   end
 
+
   private
 
   def post_params
