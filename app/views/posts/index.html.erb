@@ -3,6 +3,7 @@
   <% @posts.each do |post|%>
     <p><%= post.title %> : <%= post.comment %>  <%= "投稿者: #{post.user.name}" if post.user.name.present? %> </p>
   <% end %>
+  <button type="button" class="btn btn-primary">primary</button>
 <% else %>
   <p>ログインしてください</p>
 <% end %>
