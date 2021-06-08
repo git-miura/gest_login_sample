@@ -1,7 +1,8 @@
 <h1>投稿一覧</h1>
 <% if user_signed_in? %>
   <% @posts.each do |post|%>
-    <p><%= post.title %> : <%= post.comment %>  <%= "投稿者: #{post.user.name}" if post.user.name.present? %> </p>
+    <p><%= post.title %> : <%= post.comment %> <%= "投稿者: #{post.user.name}" if post.user.name.present? %> </p>
+    <p><%= image_tag post.image.url if post.image?%> </p>
   <% end %>
 <% else %>
   <p>ログインしてください</p>
